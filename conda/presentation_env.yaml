@@ -1,0 +1,7 @@
+name: quarto_r
+channels:
+    - conda-forge
+dependencies:
+    - r-base
+    - r-knitr
+    - r-rmarkdown
