@@ -1,0 +1,8 @@
+diff --git a/training/file1.md b/training/file1.md
+index b5f6972..8e4517b 100644
+--- a/training/file1.md
++++ b/training/file1.md
+@@ -1,2 +1,3 @@
+ # First file
+ 
++Some modifications of file1.
