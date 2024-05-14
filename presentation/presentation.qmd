@@ -1,0 +1,28 @@
+---
+title: "Git hands-on"
+author: "Niklaus johner"
+execute:
+  echo: true
+format:
+  revealjs:
+    theme: [solarized, custom.scss]
+    slide-number: true
+    footer: <https://github.com/njohner/git_hands_on>
+knitr:
+  opts_knit:
+    root.dir: "../"
+  opts_chunk:
+    collapse: true
+    R.options:
+      knitr.graphics.auto_pdf: true
+      knitr.dev: png
+---
+
+## Foreword
+Many figures for this presentation have been shamelessly taken from the
+*[Pro Git](https://git-scm.com/book)* book, which is a great reference for everything git and is [open source](https://github.com/progit/progit2).
+
+
+{{< include architecture.qmd >}}
+
+{{< include basic_workflow.qmd >}}

@@ -1,0 +1,248 @@
+
+## Recording changes {auto-animate="true"}
+
+::::: columns
+
+:::: {.column width="100%"}
+![](figures/git_workflow1.svg){fig-align="center"}
+::::
+
+:::: {.column width="0%"}
+
+::::
+:::::
+
+
+## Recording changes {auto-animate="true"}
+
+```{bash}
+#| include: false
+git checkout -b temp
+```
+
+::::: columns
+:::: {.column width="30%"}
+![](figures/git_workflow1.svg){fig-align="center"}
+::::
+
+:::: {.column width="70%"}
+::: {layout-ncol="1"}
+```{bash}
+git status
+```
+
+:::
+::::
+:::::
+
+
+## Recording changes {auto-animate="true"}
+
+::::: columns
+:::: {.column width="30%"}
+![](figures/git_workflow1.svg){fig-align="center"}
+::::
+
+:::: {.column width="70%"}
+::: {layout-ncol="1"}
+```{bash}
+#| eval: false
+git status
+```
+
+```{bash}
+git apply patches/modify_files_and_add_new_file.md
+
+```
+
+:::
+::::
+:::::
+
+## Recording changes {auto-animate="true"}
+
+::::: columns
+:::: {.column width="30%"}
+![](figures/git_workflow1.svg){fig-align="center"}
+::::
+
+:::: {.column width="70%"}
+::: {layout-ncol="1"}
+```{bash}
+#| eval: false
+git status
+git apply patches/modify_files_and_add_new_file.md
+```
+
+```{bash}
+git status
+```
+
+:::
+::::
+:::::
+
+## Recording changes {auto-animate="true"}
+
+::::: columns
+:::: {.column width="30%"}
+![](figures/git_workflow1.svg){fig-align="center"}
+::::
+
+:::: {.column width="70%"}
+::: {layout-ncol="1"}
+```{bash}
+#| eval: false
+git status
+git apply patches/modify_files_and_add_new_file.md
+git status
+```
+
+```{bash}
+git diff
+```
+
+:::
+::::
+:::::
+
+## Recording changes {auto-animate="true"}
+
+::::: columns
+:::: {.column width="30%"}
+![](figures/git_workflow1.svg){fig-align="center"}
+::::
+
+:::: {.column width="70%"}
+::: {layout-ncol="1"}
+```{bash}
+#| eval: false
+git status
+git apply patches/modify_files_and_add_new_file.md
+git status
+git diff
+```
+
+```{bash}
+git add training/file*.md
+```
+
+:::
+::::
+:::::
+
+## Recording changes {auto-animate="true"}
+
+::::: columns
+:::: {.column width="30%"}
+![](figures/git_workflow1.svg){fig-align="center"}
+::::
+
+:::: {.column width="70%"}
+::: {layout-ncol="1"}
+```{bash}
+#| eval: false
+git status
+git apply patches/modify_files_and_add_new_file.md
+git status
+git diff
+git add training/file*.md
+```
+
+```{bash}
+git diff
+```
+
+:::
+::::
+:::::
+
+## Recording changes {auto-animate="true"}
+
+::::: columns
+:::: {.column width="30%"}
+![](figures/git_workflow1.svg){fig-align="center"}
+::::
+
+:::: {.column width="70%"}
+::: {layout-ncol="1"}
+```{bash}
+#| eval: false
+git status
+git apply patches/modify_files_and_add_new_file.md
+git status
+git diff
+git add training/file*.md
+git diff
+```
+
+```{bash}
+git diff --staged
+```
+
+:::
+::::
+:::::
+
+## Recording changes {auto-animate="true"}
+
+::::: columns
+:::: {.column width="30%"}
+![](figures/git_workflow1.svg){fig-align="center"}
+::::
+
+:::: {.column width="70%"}
+::: {layout-ncol="1"}
+```{bash}
+#| eval: false
+git status
+git apply patches/modify_files_and_add_new_file.md
+git status
+git diff
+git add training/file*.md
+git diff
+git diff --staged
+```
+
+```{bash}
+git commit -m "Modified file1 and file2 and added file3.md"
+```
+
+:::
+::::
+:::::
+
+## Recording changes {auto-animate="true"}
+
+::::: columns
+:::: {.column width="30%"}
+![](figures/git_workflow1.svg){fig-align="center"}
+::::
+
+:::: {.column width="70%"}
+::: {layout-ncol="1"}
+```{bash}
+#| eval: false
+git status
+git apply patches/modify_files_and_add_new_file.md
+git status
+git diff
+git add training/file*.md
+git diff
+git diff --staged
+git commit -m "Modified file1 and file2 and added file3.md"
+```
+
+```{bash}
+git log -n2 --oneline
+```
+
+```{bash}
+#| include: false
+git checkout master
+git branch -D temp
+```
+
+:::
+::::
+:::::

@@ -1,0 +1,25 @@
+# Git Basic Workflow
+
+## Getting a git repo
+
+- Create a new repository:
+
+    ```bash
+    git init
+    ```
+
+- Clone an existing repository (and checkout the default branch):
+
+    ```bash
+    git clone <url>
+    ```
+
+::: {.fragment .fade-in .callout-note}
+If you haven't done so yet, clone the repository for this course:
+
+```bash
+git clone git@github.com:njohner/git_hands_on.git
+```
+:::
+
+{{< include record_changes.qmd >}}

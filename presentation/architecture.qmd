@@ -1,0 +1,72 @@
+# Git Architecture
+
+## Centralized version control systems
+::: {layout-ncol="2"}
+![](figures/centralized.png)
+
+- Single server contains the DB
+- Clients have only a snapshot of the DB (single version of the files)
+- Offline work is an issue
+- Single point of failure
+- Most operations are slow (done serverside)
+- Example: CVS, Subversion, Perforce
+:::
+
+
+## Distributed version control systems
+::: {layout-ncol="2"}
+- Clients have the full DB (including history)
+- Can work offline
+- Most operations are fast (local)
+- Different workflows are supported
+- Example: Git, Mercurial, Darcs
+
+![](progit2/images/distributed.png)
+:::
+
+
+## Delta-based version control
+![](progit2/images/deltas.png){fig-align="center"}
+
+- File versions are stored as deltas
+- Creating a branch often requires copying all the files
+- Retrieving an old version of a file can be slow
+
+
+## Git data model
+![](progit2/images/snapshots.png){fig-align="center"}
+
+- Snapshots of a miniature file system
+- Everything is referenced via checksums.
+
+## Git features {.smaller}
+- Files are checksummed and referenced as such:
+    - Every version is stored just once
+    - Data integrity is guaranteed
+- It's blinding fast:
+    - branching
+    - retrieving an old version of a file
+    - Diff between file versions or states
+    - ...
+- Git generally only adds data
+    - You can only loose things that are not committed yet
+    - Everything else is undoable
+
+## 3-state model
+:::: {layout="[50, 50]"}
+
+::: {}
+![](progit2/images/areas.svg){fig-align="center"}
+:::
+::: {.class-smaller}
+
+- Working tree:
+    - checkout of one version of the project
+    - files can be worked on
+- Staging area (index):
+    - Files for next commit
+- `.git` directory (repo):
+    - compressed DB (history, blobs, ...)
+
+:::
+::::
