@@ -39,7 +39,7 @@
 - Snapshots of a miniature file system
 - Everything is referenced via checksums.
 
-## Git features {.smaller}
+## Git features
 - Files are checksummed and referenced as such:
     - Every version is stored just once
     - Data integrity is guaranteed

@@ -4,8 +4,8 @@ author: "Niklaus johner"
 execute:
   echo: true
 format:
-  revealjs:
-    theme: [solarized, custom.scss]
+  clean-revealjs:
+    theme: [sky, custom.scss]
     slide-number: true
     footer: <https://github.com/njohner/git_hands_on>
 knitr:
@@ -16,6 +16,11 @@ knitr:
     R.options:
       knitr.graphics.auto_pdf: true
       knitr.dev: png
+filters:
+  - reveal-auto-agenda
+auto-agenda:
+  bullets: numbered
+  heading: Agenda
 ---
 
 ## Foreword
