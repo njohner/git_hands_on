@@ -9,6 +9,10 @@ The presentation is written in Markdown format and can be converted to a usable 
 For that you will need to:
 - install `quarto`
 - make sure you have [R](https://www.r-project.org/) with all the necessary dependencies. This can be achieved with conda `conda env create -f conda/presentation_env.yaml`
+- Install quarto extensions in `presentation` folder:
+    - `quarto install extension andrie/reveal-auto-agenda`
+    - `quarto install extension grantmcdermott/quarto-revealjs-clean`
+    - `quarto add reuning/codefocus`
 
 Creating the slides can then be simply achieved with
 ```
