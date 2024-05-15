@@ -33,3 +33,9 @@ Many figures for this presentation have been shamelessly taken from the
 {{< include architecture.qmd >}}
 
 {{< include basic_workflow.qmd >}}
+
+{{< include branching.qmd >}}
+
+
+
+
