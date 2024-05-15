@@ -26,201 +26,6 @@ git checkout -b temp
 ::::
 
 :::: {.column width="70%"}
-::: {layout-ncol="1"}
-```{bash}
-git status
-```
-
-:::
-::::
-:::::
-
-
-## Recording changes {auto-animate="true"}
-
-::::: columns
-:::: {.column width="30%"}
-![](figures/git_workflow1.svg){fig-align="center"}
-::::
-
-:::: {.column width="70%"}
-::: {layout-ncol="1"}
-```{bash}
-#| eval: false
-git status
-```
-
-```{bash}
-git apply patches/modify_files_and_add_new_file.md
-
-```
-
-:::
-::::
-:::::
-
-## Recording changes {auto-animate="true"}
-
-::::: columns
-:::: {.column width="30%"}
-![](figures/git_workflow1.svg){fig-align="center"}
-::::
-
-:::: {.column width="70%"}
-::: {layout-ncol="1"}
-```{bash}
-#| eval: false
-git status
-git apply patches/modify_files_and_add_new_file.md
-```
-
-```{bash}
-git status
-```
-
-:::
-::::
-:::::
-
-## Recording changes {auto-animate="true"}
-
-::::: columns
-:::: {.column width="30%"}
-![](figures/git_workflow1.svg){fig-align="center"}
-::::
-
-:::: {.column width="70%"}
-::: {layout-ncol="1"}
-```{bash}
-#| eval: false
-git status
-git apply patches/modify_files_and_add_new_file.md
-git status
-```
-
-```{bash}
-git diff
-```
-
-:::
-::::
-:::::
-
-## Recording changes {auto-animate="true"}
-
-::::: columns
-:::: {.column width="30%"}
-![](figures/git_workflow1.svg){fig-align="center"}
-::::
-
-:::: {.column width="70%"}
-::: {layout-ncol="1"}
-```{bash}
-#| eval: false
-git status
-git apply patches/modify_files_and_add_new_file.md
-git status
-git diff
-```
-
-```{bash}
-git add training/file*.md
-```
-
-:::
-::::
-:::::
-
-## Recording changes {auto-animate="true"}
-
-::::: columns
-:::: {.column width="30%"}
-![](figures/git_workflow1.svg){fig-align="center"}
-::::
-
-:::: {.column width="70%"}
-::: {layout-ncol="1"}
-```{bash}
-#| eval: false
-git status
-git apply patches/modify_files_and_add_new_file.md
-git status
-git diff
-git add training/file*.md
-```
-
-```{bash}
-git diff
-```
-
-:::
-::::
-:::::
-
-## Recording changes {auto-animate="true"}
-
-::::: columns
-:::: {.column width="30%"}
-![](figures/git_workflow1.svg){fig-align="center"}
-::::
-
-:::: {.column width="70%"}
-::: {layout-ncol="1"}
-```{bash}
-#| eval: false
-git status
-git apply patches/modify_files_and_add_new_file.md
-git status
-git diff
-git add training/file*.md
-git diff
-```
-
-```{bash}
-git diff --staged
-```
-
-:::
-::::
-:::::
-
-## Recording changes {auto-animate="true"}
-
-::::: columns
-:::: {.column width="30%"}
-![](figures/git_workflow1.svg){fig-align="center"}
-::::
-
-:::: {.column width="70%"}
-::: {layout-ncol="1"}
-```{bash}
-#| eval: false
-git status
-git apply patches/modify_files_and_add_new_file.md
-git status
-git diff
-git add training/file*.md
-git diff
-git diff --staged
-```
-
-```{bash}
-git commit -m "Modified file1 and file2 and added file3.md"
-```
-
-:::
-::::
-:::::
-
-## Recording changes {auto-animate="true"}
-
-::::: columns
-:::: {.column width="30%"}
-![](figures/git_workflow1.svg){fig-align="center"}
-::::
-
-:::: {.column width="70%"}
-::: {layout-ncol="1"}
 ```{bash}
 #| eval: false
 git status
@@ -231,11 +36,72 @@ git add training/file*.md
 git diff
 git diff --staged
 git commit -m "Modified file1 and file2 and added file3.md"
-```
-
-```{bash}
 git log -n2 --oneline
 ```
+
+::: {.fragment .current-only data-code-focus="1"}
+```{bash}
+#| echo: false
+git status
+```
+:::
+
+::: {.fragment .current-only data-code-focus="2"}
+```{bash}
+#| echo: false
+git apply patches/modify_files_and_add_new_file.md
+```
+:::
+
+::: {.fragment .current-only data-code-focus="3"}
+```{bash}
+#| echo: false
+git status
+```
+:::
+
+::: {.fragment .current-only data-code-focus="4"}
+```{bash}
+#| echo: false
+git diff
+```
+:::
+
+::: {.fragment .current-only data-code-focus="5"}
+```{bash}
+#| echo: false
+git add training/file*.md
+```
+:::
+
+::: {.fragment .current-only data-code-focus="6"}
+```{bash}
+#| echo: false
+git diff
+```
+:::
+
+::: {.fragment .current-only data-code-focus="7"}
+```{bash}
+#| echo: false
+git diff --staged
+```
+:::
+
+::: {.fragment .current-only data-code-focus="8"}
+```{bash}
+#| echo: false
+git commit -m "Modified file1 and file2 and added file3.md"
+```
+:::
+
+::: {.fragment .current-only data-code-focus="9"}
+```{bash}
+#| echo: false
+git log -n2 --oneline
+```
+:::
+
 
 ```{bash}
 #| include: false
@@ -243,6 +109,5 @@ git checkout master
 git branch -D temp
 ```
 
-:::
 ::::
 :::::

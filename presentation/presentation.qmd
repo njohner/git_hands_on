@@ -21,6 +21,8 @@ filters:
 auto-agenda:
   bullets: numbered
   heading: Agenda
+revealjs-plugins:
+  - codefocus
 ---
 
 ## Foreword
