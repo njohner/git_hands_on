@@ -383,3 +383,21 @@ git branch -d dev
 git checkout master
 git branch -D temp
 ```
+
+
+## Merging or rebasing?
+::::: columns
+:::: {.column width="50%"}
+![](figures/merging8_cropped.drawio.svg)
+![](figures/rebasing5_cropped.drawio.svg)
+::::
+:::: {.column width="50%"}
+- Rebase:
+    - Cleaner history
+    - Rebased commits have a different hash
+- Merge:
+    - "Dirty" history
+    - Merge commits can give complex diffs
+    - commits conserve their hash
+::::
+:::::
