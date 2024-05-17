@@ -279,3 +279,107 @@ git checkout master
 git branch -D temp
 ```
 
+```{bash}
+#| include: false
+git checkout -b dev
+git apply patches/modify_file2.patch
+git add training/file2.md
+git commit -m "Modified second file"
+git checkout master
+git checkout -b hotfix
+git apply patches/modify_file1.patch
+git add training/file1.md
+git commit -m "Fix important bug."
+git checkout master
+git checkout -b temp
+git merge hotfix -m "Merge hotfix into temp"
+git branch -d hotfix
+git checkout dev
+git apply patches/modify_file2_some_more.patch
+git add training/file2.md
+git commit -m "Finish new feature"
+```
+
+## Rebasing branches
+
+::::: columns
+:::: {.column width="50%"}
+```{bash}
+#| eval: false
+git log -n5 --oneline --graph --decorate --all
+git rebase temp
+git log -n5 --oneline --graph --decorate --all
+git checkout temp
+git merge dev
+git log -n5 --oneline --graph --decorate --all
+git branch -d dev
+```
+
+::: {.fragment .current-only data-code-focus="1" fragment-index=1}
+```{bash}
+#| echo: false
+git log -n5 --oneline --graph --decorate --all
+```
+:::
+
+::: {.fragment .current-only data-code-focus="2" fragment-index=2}
+```{bash}
+#| echo: false
+git rebase temp
+```
+:::
+
+::: {.fragment .current-only data-code-focus="3" fragment-index=3}
+```{bash}
+#| echo: false
+git log -n5 --oneline --graph --decorate --all
+```
+:::
+
+::: {.fragment .current-only data-code-focus="4" fragment-index=4}
+```{bash}
+#| echo: false
+git checkout temp
+```
+:::
+
+::: {.fragment .current-only data-code-focus="5" fragment-index=5}
+```{bash}
+#| echo: false
+git merge dev
+```
+:::
+
+::: {.fragment .current-only data-code-focus="6" fragment-index=6}
+```{bash}
+#| echo: false
+git log -n5 --oneline --graph --decorate --all
+```
+:::
+
+::: {.fragment .current-only data-code-focus="7" fragment-index=7}
+```{bash}
+#| echo: false
+git branch -d dev
+```
+:::
+::::
+
+:::: {.column width="50%"}
+::: {.r-stack}
+![](figures/merging5.drawio.svg){.fragment fragment-index=1 .current-only}
+![](figures/rebasing1.drawio.svg){.fragment fragment-index=2 .current-only}
+![](figures/rebasing2.drawio.svg){.fragment fragment-index=3 .current-only}
+![](figures/rebasing3.drawio.svg){.fragment fragment-index=4 .current-only}
+![](figures/rebasing4.drawio.svg){.fragment fragment-index=5 .current-only}
+![](figures/rebasing4.drawio.svg){.fragment fragment-index=6 .current-only}
+![](figures/rebasing5.drawio.svg){.fragment fragment-index=7}
+:::
+::::
+:::::
+
+```{bash}
+#| include: false
+git checkout master
+git branch -D temp
+```
