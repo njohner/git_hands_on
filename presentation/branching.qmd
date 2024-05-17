@@ -357,7 +357,7 @@ git log -n5 --oneline --graph --decorate --all
 ```
 :::
 
-::: {.fragment .current-only data-code-focus="7" fragment-index=7}
+::: {.fragment data-code-focus="7" fragment-index=7}
 ```{bash}
 #| echo: false
 git branch -d dev

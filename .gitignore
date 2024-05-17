@@ -3,3 +3,5 @@ presentation/presentation.html
 presentation/presentation_files/
 presentation/progit2/
 presentation/_extensions
+presentation/figures/*.drawio
+presentation/figures/.$*
