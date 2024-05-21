@@ -6,7 +6,7 @@ execute:
 format:
   clean-revealjs:
     theme: [sky, custom.scss]
-    slide-number: true
+    slide-number: false
     footer: <https://github.com/njohner/git_hands_on>
     logo: figures/CHUV_Simple_RVB.png
 knitr:
