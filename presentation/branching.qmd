@@ -1,5 +1,3 @@
-# Branching
-
 ## What is a branch?
 
 ![](figures/branching1.svg){.nostretch width=80% fig-align="center"}

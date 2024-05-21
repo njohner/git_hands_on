@@ -1,6 +1,4 @@
-# Working with remotes
-
-## Remote tracking
+## Working with remotes
 
 ::::: columns
 :::: {.column width="50%"}

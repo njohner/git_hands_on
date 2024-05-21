@@ -34,9 +34,7 @@ Many figures for this presentation have been shamelessly taken or adapted from t
 
 {{< include basic_workflow.qmd >}}
 
-{{< include branching.qmd >}}
-
-{{< include remotes.qmd >}}
+{{< include branches_and_remotes.qmd >}}
 
 {{< include stash.qmd >}}
 
