@@ -1,0 +1,57 @@
+# Working with remotes
+
+## Remote tracking
+
+::::: columns
+:::: {.column width="50%"}
+![](figures/git_workflow_remote.drawio.svg)
+
+::: {.callout-note}
+- `git clone` automatically adds remote `origin`, fetches all branches and sets up tracking for default branch
+:::
+::::
+:::: {.column width="50%"}
+- `git fetch`: add/update the local copies of remote branches (e.g. `origin/master`)
+- `git pull` if current branch is tracking remote branch:
+  - fetch all branches from the remote
+  - merge remote branch into current local branch
+- `git push`: push current local branch to remote.
+:::::
+::::
+
+## Github
+:::: columns
+::: {.column width="50%"}
+- "Just" another remote
+- Largest host for git repositories.
+- Offers some extra features:
+  - Visual interface
+  - Issue tracking
+  - Code review (PRs, merging)
+  - Forking
+:::
+::: {.column width="50%"}
+![](figures/github_metagenlab.png)
+:::
+::::
+
+## Our workflow {.smaller}
+
+:::: columns
+::: {.column width="50%"}
+![](figures/github_PR.png)
+:::
+::: {.column width="50%"}
+- Github should be a central component in your work
+  - [All master students and PhD students must have an electronic lab book](https://github.com/metagenlab/labbooks/wiki).
+  - Store notes, scripts, jupyter notebooks (without output)...
+  - Separate repository for larger projects.
+- Workflow:
+  - Work on a local branch (`initials/feature_descr`)
+  - Push to github
+  - Make pull request:
+    - Comment if useful
+    - Ask for review if useful
+  - Merge PR and delete branch
+:::
+::::
