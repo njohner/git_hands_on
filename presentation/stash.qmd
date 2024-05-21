@@ -1,0 +1,19 @@
+# The stash
+
+## Stashing
+
+:::: columns
+::: {.column width="50%"}
+![](figures/git_workflow_stash.drawio.svg)
+:::
+::: {.column width="50%"}
+- Stash is useful when your working directory is dirty and you want to_
+  - Switch branch
+  - Pull changes from remote
+  - Start over but keep the changes just in case
+- The `stash` is a stack of local commits
+- `git stash` will take changes from the working directory and staging area and commit them to the stash
+- `git stash pop` will reapply the last entry of the stash and remove it from the stash
+- `git stash apply` will reapply the last entry of the stash
+:::
+::::
