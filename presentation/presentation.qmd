@@ -40,7 +40,7 @@ Many figures for this presentation have been shamelessly taken or adapted from t
 
 {{< include undoing.qmd >}}
 
-{{< include conflicts.qmd >}}
+{{< include our_workflow.qmd >}}
 
 
 ## Resources

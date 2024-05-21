@@ -3,3 +3,5 @@
 {{< include branching.qmd >}}
 
 {{< include remotes.qmd >}}
+
+{{< include conflicts.qmd >}}
