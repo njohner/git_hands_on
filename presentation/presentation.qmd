@@ -8,6 +8,7 @@ format:
     theme: [sky, custom.scss]
     slide-number: true
     footer: <https://github.com/njohner/git_hands_on>
+    logo: figures/CHUV_Simple_RVB.png
 knitr:
   opts_knit:
     root.dir: "../"
