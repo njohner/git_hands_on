@@ -4,7 +4,7 @@
 :::: {.column width="50%"}
 ![](figures/git_workflow_remote.drawio.svg)
 
-::: {.callout-note}
+::: {.callout-note .fragment}
 - `git clone` automatically adds remote `origin`, fetches all branches and sets up tracking for default branch
 :::
 ::::
