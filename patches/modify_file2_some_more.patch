@@ -1,0 +1,13 @@
+diff --git a/training/file2.md b/training/file2.md
+index 88b7a1e..1195c22 100644
+--- a/training/file2.md
++++ b/training/file2.md
+@@ -3,3 +3,8 @@
+ ## A section in file2
+ 
+ Lorem ipsum...
++
++## Another section in file2
++
++with some more changes
++
