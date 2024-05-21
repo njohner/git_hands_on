@@ -109,5 +109,11 @@ git checkout master
 git branch -D temp
 ```
 
+::: {.fragment .fade-in .callout-tip}
+If you want to stage only part of a file you can use
+
+`git add -i <paths>`
+:::
+
 ::::
 :::::
