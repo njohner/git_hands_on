@@ -1,0 +1,128 @@
+# Undoing and rewriting history
+
+## Rewriting history
+
+- `git commit --amend`: Add to last commit
+- `git rebase -i HEAD~n`: Interactively modify the last n commits:
+  - Change commit order
+  - Squash commits
+  - Change commit messages
+  - Edit individual commits
+
+## Undoing things
+<ul>
+::: {.fragment .strike fragment-index=1}
+- `git checkout`: Move HEAD or restore file in workdir
+:::
+::: {.fragment fragment-index=1}
+- `git switch`: Move HEAD
+- `git restore <paths>`: restore file in workdir and/or index
+:::
+::: {.fragment}
+- `git reset [commit]`: Depending on options, move branch tip, update index, update workdir
+:::
+</ul>
+
+::: {.fragment .fade-in .callout-important}
+These 3 commands can make you loose data:
+
+- `git checkout [commit] -- <paths>`
+- `git reset --hard [commit]`
+- `git restore <paths>`
+:::
+
+## Undoing things: reset {auto-animate=true}
+
+::::: columns
+:::: {.column width="50%"}
+`git reset [commit] <paths>`:
+
+- Move branch to new commit (`--soft`)
+- Update index (default)
+- Update workdir (`--hard`)
+::::
+
+:::: {.column width="50%"}
+![](progit2/images/reset-start.png){.nostretch fig-width="1000"}
+::::
+:::::
+
+## Undoing things: reset {auto-animate=true}
+
+::::: columns
+:::: {.column width="50%"}
+`git reset [commit] <paths>`:
+
+- Move branch to new commit (`--soft`)
+- Update index (default)
+- Update workdir (`--hard`)
+
+::: {.callout-tip}
+Undone with `git commit`.
+:::
+::::
+
+:::: {.column width="50%"}
+![](progit2/images/reset-soft.png)
+::::
+:::::
+
+## Undoing things: reset {auto-animate=true}
+
+::::: columns
+:::: {.column width="50%"}
+`git reset [commit] <paths>`:
+
+- Move branch to new commit (`--soft`)
+- Update index (default)
+- Update workdir (`--hard`)
+
+::: {.callout-tip}
+Undone with `git add` and `git commit`.
+:::
+::::
+
+:::: {.column width="50%"}
+![](progit2/images/reset-mixed.png)
+::::
+:::::
+
+
+## Undoing things: reset {auto-animate=true}
+
+::::: columns
+:::: {.column width="50%"}
+`git reset [commit] <paths>`:
+
+- Move branch to new commit (`--soft`)
+- Update index (default)
+- Update workdir (`--hard`)
+
+::: {.callout-warning}
+Changes in workdir are lost! If unintended, cache in your editor might save you.
+What had been committed should be retrievable.
+:::
+::::
+
+:::: {.column width="50%"}
+![](progit2/images/reset-hard.png)
+::::
+:::::
+
+## Undoing things: restore {.smaller}
+::::: columns
+:::: {.column width="50%"}
+![](figures/git_restore_workflow.drawio.svg)
+::::
+:::: {.column width="50%"}
+- `git restore [--workdir] <path>`: restore file in workdir from staging area
+- `git restore --staged <path>`: restore file in staging area from repo
+- `git restore --workdir --staged <path>`: restore file in workdir and staging area from repo
+- `git restore --source=<tree>`: restore file from specified commit or branch
+
+::: {.fragment .fade-in .callout-tip}
+Let github tell you what to do with `git status`
+:::
+
+::::
+:::::
