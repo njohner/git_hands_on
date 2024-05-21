@@ -36,3 +36,21 @@ Many figures for this presentation have been shamelessly taken from the
 
 {{< include branching.qmd >}}
 ````
+
+{{< include remotes.qmd >}}
+
+{{< include stash.qmd >}}
+
+{{< include undoing.qmd >}}
+
+{{< include conflicts.qmd >}}
+
+
+## Resources
+
+- Cheat sheets:
+  - https://training.github.com/downloads/github-git-cheat-sheet.pdf
+  - http://www.ndpsoftware.com/git-cheatsheet.html#loc=index (visual)
+  - https://education.github.com/git-cheat-sheet-education.pdf
+- Documentation:
+  - https://git-scm.com/book/en/v2
