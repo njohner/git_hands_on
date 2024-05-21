@@ -1,0 +1,48 @@
+# Conflict resolution
+
+## Conflict resolution
+
+::::: columns
+:::: {.column width="60%"}
+- Conflicts arise when git cannot apply certain changes cleanly (automatically reconcile the changes)
+- This happens when merging, rebasing or applying changes:
+- Conflicts need to be resolved manually:
+  - Update concerned files
+  - `git add <paths>`
+  - `git merge --continue` or `git rebase --continue`
+::::
+:::: {.column width="40%"}
+
+
+```{bash}
+#| eval: false
+#| classes: code-bottom-padding
+git checkout -b dev
+git apply patches/modify_file2.patch
+git add training/file2.md
+git commit -m "Working on file2"
+
+git checkout master
+git checkout -b hotfix
+git apply patches/modify_file2_2.patch
+git add training/file2.md
+git commit -m "Hotfix in file2"
+
+git checkout dev
+git merge hotfix
+```
+
+```{bash}
+#| eval: false
+#| classes: code-bottom-padding
+git merge --abort
+```
+
+```{bash}
+#| eval: false
+git add training/file2.md
+git merge --continue
+```
+
+::::
+:::::
