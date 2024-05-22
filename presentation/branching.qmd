@@ -30,6 +30,11 @@
 
 :::: {.column width="50%"}
 ```{bash}
+#| include: false
+git checkout -b stable
+```
+
+```{bash}
 #| eval: false
 git branch
 git checkout -b dev
@@ -37,7 +42,7 @@ git branch
 git apply patches/modify_file2.patch
 git add training/file2.md
 git commit -m "Modified second file"
-git checkout master
+git checkout stable
 git checkout -b hotfix
 git branch
 git apply patches/modify_file1.patch
@@ -91,7 +96,7 @@ git commit -m "Modified second file"
 ::: {.fragment fragment-index=7 .current-only data-code-focus="7"}
 ```{bash}
 #| echo: false
-git checkout master
+git checkout stable
 ```
 :::
 
@@ -144,36 +149,18 @@ git log -n6 --oneline --all --graph --decorate
 
 ::::: columns
 :::: {.column width="50%"}
-::: {.r-stack}
-![](figures/merging1.drawio.svg){.fragment fragment-index=1 .current-only}
-![](figures/merging2.drawio.svg){.fragment fragment-index=2 .current-only}
-![](figures/merging3.drawio.svg){.fragment fragment-index=3 .current-only}
-![](figures/merging3.drawio.svg){.fragment fragment-index=4 .current-only}
-![](figures/merging3_bis.drawio.svg){.fragment fragment-index=5 .current-only}
-![](figures/merging4.drawio.svg){.fragment fragment-index=6 .current-only}
-![](figures/merging4.drawio.svg){.fragment fragment-index=7 .current-only}
-![](figures/merging4.drawio.svg){.fragment fragment-index=8 .current-only}
-![](figures/merging5.drawio.svg){.fragment fragment-index=9 .current-only}
-![](figures/merging6.drawio.svg){.fragment fragment-index=10 .current-only}
-![](figures/merging7.drawio.svg){.fragment fragment-index=11 .current-only}
-![](figures/merging8.drawio.svg){.fragment fragment-index=12}
-:::
-::::
-
-:::: {.column width="50%"}
 ```{bash}
 #| eval: false
-git checkout master
-git checkout -b temp
-git merge hotfix -m "Merge hotfix into temp"
+git checkout stable
+git merge hotfix -m "Merge hotfix into stable"
 git branch
 git branch -d hotfix
 git checkout dev
 git apply patches/modify_file2_some_more.patch
 git add training/file2.md
 git commit -m "Finish new feature"
-git checkout temp
-git merge dev -m "Merge dev into temp"
+git checkout stable
+git merge dev -m "Merge dev into stable"
 git branch -d dev
 git log -n6 --oneline --graph --decorate
 ```
@@ -181,88 +168,81 @@ git log -n6 --oneline --graph --decorate
 ::: {.fragment .current-only data-code-focus="1" fragment-index=1}
 ```{bash}
 #| echo: false
-git checkout master
+git checkout stable
 ```
 :::
 
 ::: {.fragment .current-only data-code-focus="2" fragment-index=2}
 ```{bash}
 #| echo: false
-git checkout -b temp
+git merge hotfix -m "Merge hotfix into stable"
 ```
 :::
 
 ::: {.fragment .current-only data-code-focus="3" fragment-index=3}
 ```{bash}
 #| echo: false
-git merge hotfix -m "Merge hotfix into temp"
+git branch
 ```
 :::
 
 ::: {.fragment .current-only data-code-focus="4" fragment-index=4}
 ```{bash}
 #| echo: false
-git branch
+git branch -d hotfix
 ```
 :::
 
 ::: {.fragment .current-only data-code-focus="5" fragment-index=5}
 ```{bash}
 #| echo: false
-git branch -d hotfix
+git checkout dev
 ```
 :::
 
 ::: {.fragment .current-only data-code-focus="6" fragment-index=6}
 ```{bash}
 #| echo: false
-git checkout dev
+git apply patches/modify_file2_some_more.patch
 ```
 :::
 
 ::: {.fragment .current-only data-code-focus="7" fragment-index=7}
 ```{bash}
 #| echo: false
-git apply patches/modify_file2_some_more.patch
+git add training/file2.md
 ```
 :::
 
 ::: {.fragment .current-only data-code-focus="8" fragment-index=8}
 ```{bash}
 #| echo: false
-git add training/file2.md
+git commit -m "Finish new feature"
 ```
 :::
 
 ::: {.fragment .current-only data-code-focus="9" fragment-index=9}
 ```{bash}
 #| echo: false
-git commit -m "Finish new feature"
+git checkout stable
 ```
 :::
 
 ::: {.fragment .current-only data-code-focus="10" fragment-index=10}
 ```{bash}
 #| echo: false
-git checkout temp
+git merge dev -m "Merge dev into stable"
 ```
 :::
 
 ::: {.fragment .current-only data-code-focus="11" fragment-index=11}
 ```{bash}
 #| echo: false
-git merge dev -m "Merge dev into temp"
-```
-:::
-
-::: {.fragment .current-only data-code-focus="12" fragment-index=12}
-```{bash}
-#| echo: false
 git branch -d dev
 ```
 :::
 
-::: {.fragment data-code-focus="13" fragment-index=13}
+::: {.fragment .current-only data-code-focus="12" fragment-index=12}
 ```{bash}
 #| echo: false
 git log -n6 --oneline --graph --decorate
@@ -270,27 +250,48 @@ git log -n6 --oneline --graph --decorate
 :::
 
 ::::
+
+:::: {.column width="50%"}
+::: {.r-stack}
+![](figures/merging1.drawio.svg){.fragment fragment-index=1 .current-only}
+![](figures/merging2.drawio.svg){.fragment fragment-index=2 .current-only}
+![](figures/merging2.drawio.svg){.fragment fragment-index=3 .current-only}
+![](figures/merging3.drawio.svg){.fragment fragment-index=4 .current-only}
+![](figures/merging4.drawio.svg){.fragment fragment-index=5 .current-only}
+![](figures/merging4.drawio.svg){.fragment fragment-index=6 .current-only}
+![](figures/merging4.drawio.svg){.fragment fragment-index=7 .current-only}
+![](figures/merging5.drawio.svg){.fragment fragment-index=8 .current-only}
+![](figures/merging6.drawio.svg){.fragment fragment-index=9 .current-only}
+![](figures/merging7.drawio.svg){.fragment fragment-index=10 .current-only}
+![](figures/merging8.drawio.svg){.fragment fragment-index=11 .current-only}
+![](figures/merging8.drawio.svg){.fragment fragment-index=12}
+:::
+::::
+
 :::::
-```{bash}
-#| include: false
-git checkout master
-git branch -D temp
-```
 
 ```{bash}
 #| include: false
+git checkout master
+git branch -D stable
+```
+
+## Rebasing branches
+
+```{bash}
+#| include: false
+git checkout -b stable
 git checkout -b dev
 git apply patches/modify_file2.patch
 git add training/file2.md
 git commit -m "Modified second file"
-git checkout master
+git checkout stable
 git checkout -b hotfix
 git apply patches/modify_file1.patch
 git add training/file1.md
 git commit -m "Fix important bug."
-git checkout master
-git checkout -b temp
-git merge hotfix -m "Merge hotfix into temp"
+git checkout stable
+git merge hotfix -m "Merge hotfix into stable"
 git branch -d hotfix
 git checkout dev
 git apply patches/modify_file2_some_more.patch
@@ -298,16 +299,14 @@ git add training/file2.md
 git commit -m "Finish new feature"
 ```
 
-## Rebasing branches
-
 ::::: columns
 :::: {.column width="50%"}
 ```{bash}
 #| eval: false
 git log -n5 --oneline --graph --decorate --all
-git rebase temp
+git rebase stable
 git log -n5 --oneline --graph --decorate --all
-git checkout temp
+git checkout stable
 git merge dev
 git log -n5 --oneline --graph --decorate --all
 git branch -d dev
@@ -323,7 +322,7 @@ git log -n5 --oneline --graph --decorate --all
 ::: {.fragment .current-only data-code-focus="2" fragment-index=2}
 ```{bash}
 #| echo: false
-git rebase temp
+git rebase stable
 ```
 :::
 
@@ -337,7 +336,7 @@ git log -n5 --oneline --graph --decorate --all
 ::: {.fragment .current-only data-code-focus="4" fragment-index=4}
 ```{bash}
 #| echo: false
-git checkout temp
+git checkout stable
 ```
 :::
 
@@ -379,9 +378,8 @@ git branch -d dev
 ```{bash}
 #| include: false
 git checkout master
-git branch -D temp
+git branch -D stable
 ```
-
 
 ## Merging or rebasing?
 ::::: columns

@@ -17,7 +17,7 @@
 
 ```{bash}
 #| include: false
-git checkout -b temp
+git checkout -b stable
 ```
 
 ::::: columns
@@ -114,7 +114,7 @@ git log -n2 --oneline
 ```{bash}
 #| include: false
 git checkout master
-git branch -D temp
+git branch -D stable
 ```
 
 ::: {.fragment .fade-in .callout-tip}
