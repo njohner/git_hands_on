@@ -1,6 +1,6 @@
-# Our workflow {.smaller}
+# Our workflow
 
-## How we should work...
+## How we should work... {.smaller}
 :::: columns
 ::: {.column width="50%"}
 ![](figures/github_PR.png)
