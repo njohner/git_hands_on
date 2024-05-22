@@ -14,10 +14,24 @@ For that you will need to:
     - `quarto install extension grantmcdermott/quarto-revealjs-clean`
     - `quarto add reuning/codefocus`
 
-Creating the slides can then be simply achieved with
+Viewing the slides can then be simply achieved with
 ```
 conda activate quarto_r
-quarto render presentation/presentation.qmd --to revealjs
+quarto preview presentation/presentation.qmd
+```
+which will open a browser window displaying the slides.
+
+To get the `html` file of the presentation you can instead run
+```
+conda activate quarto_r
+quarto preview presentation/presentation.qmd --render revealjs
+```
+and if you want to have a self contained version of the presentation, you will need the copy the following files and folders:
+
+```
+presentation/presentation.html
+presentation/presentation_files
+presentation/figures
 ```
 
 ## Resources
