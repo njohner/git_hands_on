@@ -33,6 +33,7 @@ git apply patches/modify_files_and_add_new_file.md
 git status
 git diff
 git add training/file*.md
+git status
 git diff
 git diff --staged
 git commit -m "Modified file1 and file2 and added file3.md"
@@ -77,25 +78,32 @@ git add training/file*.md
 ::: {.fragment .current-only data-code-focus="6"}
 ```{bash}
 #| echo: false
-git diff
+git status
 ```
 :::
 
 ::: {.fragment .current-only data-code-focus="7"}
 ```{bash}
 #| echo: false
-git diff --staged
+git diff
 ```
 :::
 
 ::: {.fragment .current-only data-code-focus="8"}
 ```{bash}
 #| echo: false
-git commit -m "Modified file1 and file2 and added file3.md"
+git diff --staged
 ```
 :::
 
 ::: {.fragment .current-only data-code-focus="9"}
+```{bash}
+#| echo: false
+git commit -m "Modified file1 and file2 and added file3.md"
+```
+:::
+
+::: {.fragment .current-only data-code-focus="10"}
 ```{bash}
 #| echo: false
 git log -n2 --oneline
