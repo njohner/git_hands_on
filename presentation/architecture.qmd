@@ -21,12 +21,12 @@
 - Different workflows are supported
 - Example: Git, Mercurial, Darcs
 
-![](progit2/images/distributed.png)
+![](figures/distributed.png)
 :::
 
 
 ## Delta-based version control
-![](progit2/images/deltas.png){fig-align="center"}
+![](figures/deltas.png){fig-align="center"}
 
 - File versions are stored as deltas
 - Creating a branch often requires copying all the files
@@ -34,7 +34,7 @@
 
 
 ## Git data model
-![](progit2/images/snapshots.png){fig-align="center"}
+![](figures/snapshots.png){fig-align="center"}
 
 - Snapshots of a miniature file system
 - Everything is referenced via checksums.
@@ -56,7 +56,7 @@
 :::: {layout="[50, 50]"}
 
 ::: {}
-![](progit2/images/areas.svg){fig-align="center"}
+![](figures/areas.svg){fig-align="center"}
 :::
 ::: {.class-smaller}
 

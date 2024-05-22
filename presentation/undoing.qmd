@@ -43,7 +43,7 @@ These 3 commands can make you loose data:
 ::::
 
 :::: {.column width="50%"}
-![](progit2/images/reset-start.png){.nostretch fig-width="1000"}
+![](figures/reset-start.png){.nostretch fig-width="1000"}
 ::::
 :::::
 
@@ -63,7 +63,7 @@ Undone with `git commit`.
 ::::
 
 :::: {.column width="50%"}
-![](progit2/images/reset-soft.png)
+![](figures/reset-soft.png)
 ::::
 :::::
 
@@ -83,7 +83,7 @@ Undone with `git add` and `git commit`.
 ::::
 
 :::: {.column width="50%"}
-![](progit2/images/reset-mixed.png)
+![](figures/reset-mixed.png)
 ::::
 :::::
 
@@ -105,7 +105,7 @@ What had been committed should be retrievable.
 ::::
 
 :::: {.column width="50%"}
-![](progit2/images/reset-hard.png)
+![](figures/reset-hard.png)
 ::::
 :::::
 
