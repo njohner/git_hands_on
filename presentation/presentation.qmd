@@ -1,5 +1,7 @@
 ---
 title: "Git hands-on"
+subtitle: "Go ahead and clone the repo:<br>`git clone git@github.com:njohner/git_hands_on.git`"
+
 author: "Niklaus johner"
 execute:
   echo: true
