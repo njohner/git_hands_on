@@ -1,4 +1,4 @@
-## Working with remotes
+## Working with remotes {.smaller}
 
 ::::: columns
 :::: {.column width="50%"}
@@ -9,9 +9,14 @@
 :::
 ::::
 :::: {.column width="50%"}
-- `git fetch`: add/update the local copies of remote branches (e.g. `origin/master`)
-- `git pull` if current branch is tracking remote branch:
-  - fetch all branches from the remote
+- A remote is another copy of the repository.
+- Local copy of remote branches (e.g. `origin/master`)
+- `git fetch`: update local copies of remote branches
+
+if current branch is tracking remote branch:
+
+- `git pull`:
+  - fetch from remote
   - merge remote branch into current local branch
 - `git push`: push current local branch to remote.
 :::::
