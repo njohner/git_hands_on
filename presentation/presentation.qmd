@@ -34,9 +34,9 @@ Many figures for this presentation have been shamelessly taken or adapted from t
 
 In this course we will try to use the modern, safer git commands, i.e.:
 
-- `git switch <branchname>` instead of `git checkout <branchname>`
-- `git switch -c <branchname>` instead of `git checkout -b <branchname>`
-- `git restore <paths>` instead of `git checkout -- <paths>`
+- `git switch <branch>` not `git checkout <branch>`
+- `git switch -c <branch>` not `git checkout -b <branch>`
+- `git restore <paths>` not `git checkout -- <paths>`
 
 {{< include architecture.qmd >}}
 
