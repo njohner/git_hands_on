@@ -8,7 +8,7 @@
 - It's cleaner and easier even when working alone on a project.
 - Working with branches should be your default workflow.
 
-## Basic branching {auto-animate="true"}
+## Create and use branches {auto-animate="true"}
 
 ::::: columns
 :::: {.column width="50%"}
@@ -146,7 +146,7 @@ git log -n6 --oneline --all --graph --decorate
 ::::
 :::::
 
-## Merging branches
+## Merging branches maintains history
 
 ::::: columns
 :::: {.column width="50%"}
@@ -277,7 +277,7 @@ git switch master
 git branch -D stable
 ```
 
-## Rebasing branches
+## Rebasing allows linear history
 
 ```{bash}
 #| include: false
@@ -382,13 +382,13 @@ git switch master
 git branch -D stable
 ```
 
-## Merging or rebasing?
+## Rebase before merging...
 ::::: columns
-:::: {.column width="50%"}
+:::: {.column width="40%"}
 ![](figures/merging8_cropped.drawio.svg)
 ![](figures/rebasing5_cropped.drawio.svg)
 ::::
-:::: {.column width="50%"}
+:::: {.column width="60%"}
 - Merge:
     - "Dirty" history
     - Merge commits can give complex diffs
@@ -396,5 +396,11 @@ git branch -D stable
 - Rebase:
     - Cleaner history
     - Rebased commits have a different hash
+
 ::::
+
+::: {.callout-note .fragment}
+Opinions diverge, but I'll always go for rebasing before merging, except if someone else has based his work on the branch that needs rebasing.
+:::
+
 :::::

@@ -1,9 +1,10 @@
-## Conflict resolution
+## Conflicts: avoid or resolve...
 
 ::::: columns
 :::: {.column width="60%"}
-- Conflicts arise when git cannot apply certain changes cleanly (automatically reconcile the changes)
-- This happens when merging, rebasing or applying changes:
+- Conflicts arise:
+  - when merging, rebasing, applying changes
+  - if changes cannot be applied cleanly
 - Conflicts need to be resolved manually:
   - Update concerned files
   - `git add <paths>`

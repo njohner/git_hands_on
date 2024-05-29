@@ -22,7 +22,7 @@ if current branch is tracking remote branch:
 :::::
 ::::
 
-## Github
+## Github: a git repository host.
 :::: columns
 ::: {.column width="50%"}
 - "Just" another remote

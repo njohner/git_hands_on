@@ -1,7 +1,10 @@
 # Undoing and rewriting history
 
-## Rewriting history
+## Clean-up your mess: rewrite history!
 
+- Clean history:
+  - Easier code reviews
+  - Better maintainability
 - `git commit --amend`: Add to last commit
 - `git rebase -i HEAD~n`: Interactively modify the last n commits:
   - Change commit order
@@ -9,7 +12,7 @@
   - Change commit messages
   - Edit individual commits
 
-## Undoing things
+## Undoing things: avoid checkout
 <ul>
 ::: {.fragment .strike fragment-index=1}
 - `git checkout`: Move HEAD or restore file in workdir
@@ -31,7 +34,7 @@ These 3 commands can make you loose data:
 - `git restore <paths>`
 :::
 
-## Undoing things: reset {auto-animate=true}
+## reset to state from commit {auto-animate=true}
 
 ::::: columns
 :::: {.column width="50%"}
@@ -47,7 +50,7 @@ These 3 commands can make you loose data:
 ::::
 :::::
 
-## Undoing things: reset {auto-animate=true}
+## reset to state from commit {auto-animate=true}
 
 ::::: columns
 :::: {.column width="50%"}
@@ -67,7 +70,7 @@ Undone with `git commit`.
 ::::
 :::::
 
-## Undoing things: reset {auto-animate=true}
+## reset to state from commit {auto-animate=true}
 
 ::::: columns
 :::: {.column width="50%"}
@@ -88,7 +91,7 @@ Undone with `git add` and `git commit`.
 :::::
 
 
-## Undoing things: reset {auto-animate=true}
+## reset to state from commit {auto-animate=true}
 
 ::::: columns
 :::: {.column width="50%"}
@@ -109,7 +112,7 @@ What had been committed should be retrievable.
 ::::
 :::::
 
-## Undoing things: restore {.smaller}
+## restore file from one area to another {.smaller}
 ::::: columns
 :::: {.column width="50%"}
 ![](figures/git_restore_workflow.drawio.svg)

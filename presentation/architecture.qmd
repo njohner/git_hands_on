@@ -46,7 +46,7 @@ Git data model
 :::
 ::::
 
-## Git features
+## Git is awesome
 - Files are checksummed and referenced as such:
     - Every version is stored just once
     - Data integrity is guaranteed
@@ -59,7 +59,7 @@ Git data model
     - You can only loose things that are not committed yet
     - Everything else is undoable
 
-## 3-state model
+## The 3 filestates: modified, staged, committed
 :::: {layout="[50, 50]"}
 
 ::: {}
