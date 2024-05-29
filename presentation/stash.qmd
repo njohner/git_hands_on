@@ -1,17 +1,26 @@
 # The stash
 
-## Stashing {.smaller}
+## Use the stash! {.smaller}
 
-:::: columns
-::: {.column width="50%"}
+::::: columns
+:::: {.column width="50%"}
 ![](figures/git_workflow_stash.drawio.svg)
-:::
-::: {.column width="50%"}
-- The `stash` is a stack of local commits
-- `git stash` will take changes from the working directory and staging area and commit them to the stash
-- `git stash pop` will reapply the last entry of the stash and remove it from the stash
-- `git stash apply` will reapply the last entry of the stash
-- Stashing allows to clean your working directory while keeping your changes
+::::
+:::: {.column width="50%"}
+- Stack of local commits
+- `git stash`:
+  - Stage changes in working directory
+  - commit them to stash
+
+  ::: {.fragment fragment-index=1 style="color:red;"}
+  clean your working directory while keeping your changes!
+  :::
+
+::: {.fragment fragment-index=2}
+- `git stash pop`: remove last entry from the stash and apply it.
+- `git stash apply` apply last entry of the stash
 - Typically used when you need to switch branch, pull changes...
 :::
+
 ::::
+:::::
