@@ -1,43 +1,50 @@
 # Git Architecture
 
-## Centralized version control systems
-::: {layout-ncol="2"}
-![](figures/centralized.png)
-
-- Single server contains the DB
-- Clients have only a snapshot of the DB (single version of the files)
-- Offline work is an issue
-- Single point of failure
-- Most operations are slow (done serverside)
-- Example: CVS, Subversion, Perforce
+## Git is a distributed version control system {.smaller}
+:::: columns
+::: {.column width="50%"}
+![](figures/centralized.png){.nostretch width="70%" fig-align="center"}
 :::
 
-
-## Distributed version control systems
-::: {layout-ncol="2"}
+::: {.column width="50%"}
+![](figures/distributed.png){.nostretch width="50%" fig-align="center"}
+:::
+::::
+:::: columns
+::: {.column width="50%"}
+- Single server contains the DB
+- Offline work is an issue
+- Most operations are slow (done serverside)
+- Single point of failure
+- Example: CVS, Subversion
+:::
+::: {.column width="50%"}
 - Clients have the full DB (including history)
 - Can work offline
 - Most operations are fast (local)
 - Different workflows are supported
-- Example: Git, Mercurial, Darcs
-
-![](figures/distributed.png)
 :::
+::::
 
 
-## Delta-based version control
+## Git stores snapshots, not deltas.
+:::: columns
+::: {.column width="50%"}
+Delta-based version control
 ![](figures/deltas.png){fig-align="center"}
 
 - File versions are stored as deltas
 - Creating a branch often requires copying all the files
 - Retrieving an old version of a file can be slow
-
-
-## Git data model
+:::
+::: {.column width="50%"}
+Git data model
 ![](figures/snapshots.png){fig-align="center"}
 
 - Snapshots of a miniature file system
 - Everything is referenced via checksums.
+:::
+::::
 
 ## Git features
 - Files are checksummed and referenced as such:
@@ -60,13 +67,13 @@
 :::
 ::: {.class-smaller}
 
+- `.git` directory (repo):
+    - compressed DB (history, blobs, ...)
 - Working tree:
     - checkout of one version of the project
     - files can be worked on
 - Staging area (index):
     - Files for next commit
-- `.git` directory (repo):
-    - compressed DB (history, blobs, ...)
 
 :::
 ::::
