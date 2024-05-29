@@ -1,8 +1,9 @@
-## What is a branch?
+## A branch is a pointer to a commit.
 
-![](figures/branching1.svg){.nostretch width=80% fig-align="center"}
+![](figures/branching1.svg){.nostretch width=70% fig-align="center"}
 
 - A branch is simply a pointer to a commit.
+- `HEAD` points to the branch currently checked-out.
 - Branching is essential for collaborative work.
 - It's cleaner and easier even when working alone on a project.
 - Working with branches should be your default workflow.
@@ -31,19 +32,19 @@
 :::: {.column width="50%"}
 ```{bash}
 #| include: false
-git checkout -b stable
+git switch -c stable
 ```
 
 ```{bash}
 #| eval: false
 git branch
-git checkout -b dev
+git switch -c dev
 git branch
 git apply patches/modify_file2.patch
 git add training/file2.md
 git commit -m "Modified second file"
-git checkout stable
-git checkout -b hotfix
+git switch stable
+git switch -c hotfix
 git branch
 git apply patches/modify_file1.patch
 git add training/file1.md
@@ -61,7 +62,7 @@ git branch
 ::: {.fragment fragment-index=2 .current-only data-code-focus="2"}
 ```{bash}
 #| echo: false
-git checkout -b dev
+git switch -c dev
 ```
 :::
 
@@ -96,14 +97,14 @@ git commit -m "Modified second file"
 ::: {.fragment fragment-index=7 .current-only data-code-focus="7"}
 ```{bash}
 #| echo: false
-git checkout stable
+git switch stable
 ```
 :::
 
 ::: {.fragment fragment-index=8 .current-only data-code-focus="8"}
 ```{bash}
 #| echo: false
-git checkout -b hotfix
+git switch -c hotfix
 ```
 :::
 
@@ -151,15 +152,15 @@ git log -n6 --oneline --all --graph --decorate
 :::: {.column width="50%"}
 ```{bash}
 #| eval: false
-git checkout stable
+git switch stable
 git merge hotfix -m "Merge hotfix into stable"
 git branch
 git branch -d hotfix
-git checkout dev
+git switch dev
 git apply patches/modify_file2_some_more.patch
 git add training/file2.md
 git commit -m "Finish new feature"
-git checkout stable
+git switch stable
 git merge dev -m "Merge dev into stable"
 git branch -d dev
 git log -n6 --oneline --graph --decorate
@@ -168,7 +169,7 @@ git log -n6 --oneline --graph --decorate
 ::: {.fragment .current-only data-code-focus="1" fragment-index=1}
 ```{bash}
 #| echo: false
-git checkout stable
+git switch stable
 ```
 :::
 
@@ -196,7 +197,7 @@ git branch -d hotfix
 ::: {.fragment .current-only data-code-focus="5" fragment-index=5}
 ```{bash}
 #| echo: false
-git checkout dev
+git switch dev
 ```
 :::
 
@@ -224,7 +225,7 @@ git commit -m "Finish new feature"
 ::: {.fragment .current-only data-code-focus="9" fragment-index=9}
 ```{bash}
 #| echo: false
-git checkout stable
+git switch stable
 ```
 :::
 
@@ -272,7 +273,7 @@ git log -n6 --oneline --graph --decorate
 
 ```{bash}
 #| include: false
-git checkout master
+git switch master
 git branch -D stable
 ```
 
@@ -280,20 +281,20 @@ git branch -D stable
 
 ```{bash}
 #| include: false
-git checkout -b stable
-git checkout -b dev
+git switch -c stable
+git switch -c dev
 git apply patches/modify_file2.patch
 git add training/file2.md
 git commit -m "Modified second file"
-git checkout stable
-git checkout -b hotfix
+git switch stable
+git switch -c hotfix
 git apply patches/modify_file1.patch
 git add training/file1.md
 git commit -m "Fix important bug."
-git checkout stable
+git switch stable
 git merge hotfix -m "Merge hotfix into stable"
 git branch -d hotfix
-git checkout dev
+git switch dev
 git apply patches/modify_file2_some_more.patch
 git add training/file2.md
 git commit -m "Finish new feature"
@@ -306,7 +307,7 @@ git commit -m "Finish new feature"
 git log -n5 --oneline --graph --decorate --all
 git rebase stable
 git log -n5 --oneline --graph --decorate --all
-git checkout stable
+git switch stable
 git merge dev
 git log -n5 --oneline --graph --decorate --all
 git branch -d dev
@@ -336,7 +337,7 @@ git log -n5 --oneline --graph --decorate --all
 ::: {.fragment .current-only data-code-focus="4" fragment-index=4}
 ```{bash}
 #| echo: false
-git checkout stable
+git switch stable
 ```
 :::
 
@@ -377,7 +378,7 @@ git branch -d dev
 
 ```{bash}
 #| include: false
-git checkout master
+git switch master
 git branch -D stable
 ```
 
@@ -388,12 +389,12 @@ git branch -D stable
 ![](figures/rebasing5_cropped.drawio.svg)
 ::::
 :::: {.column width="50%"}
-- Rebase:
-    - Cleaner history
-    - Rebased commits have a different hash
 - Merge:
     - "Dirty" history
     - Merge commits can give complex diffs
     - commits conserve their hash
+- Rebase:
+    - Cleaner history
+    - Rebased commits have a different hash
 ::::
 :::::

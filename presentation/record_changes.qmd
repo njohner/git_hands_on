@@ -17,7 +17,7 @@
 
 ```{bash}
 #| include: false
-git checkout -b stable
+git switch -c stable
 ```
 
 ::::: columns
@@ -113,7 +113,7 @@ git log -n2 --oneline
 
 ```{bash}
 #| include: false
-git checkout master
+git switch master
 git branch -D stable
 ```
 

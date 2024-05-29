@@ -15,18 +15,18 @@
 ```{bash}
 #| eval: false
 #| classes: code-bottom-padding
-git checkout -b dev
+git switch -c dev
 git apply patches/modify_file2.patch
 git add training/file2.md
 git commit -m "Working on file2"
 
-git checkout master
-git checkout -b hotfix
+git switch master
+git switch -c hotfix
 git apply patches/modify_file2_2.patch
 git add training/file2.md
 git commit -m "Hotfix in file2"
 
-git checkout dev
+git switch dev
 git merge hotfix
 ```
 
