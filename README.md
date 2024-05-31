@@ -178,7 +178,7 @@ git log -n6 --oneline --graph --decorate --all
 ```
 </details>
 
-#### Ex. 2.4 (basic): Deleting branches
+#### Ex. 2.5 (basic): Deleting branches
 We'll now do some clean-up:
 - Switch to `master` branch
 - Delete all other branches. For some branches, git will complain that the branch was not fully merged, and you'll have to force delete them, git will tell you how (use `git branch -D <branchname>`)
