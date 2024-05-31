@@ -1,5 +1,14 @@
 # Git Architecture
 
+## Version control systems safeguards your code
+
+A version control system (VCS):
+- track and manage changes to source code
+- recover previous versions
+- Parallel development
+- Manage releases
+- Mainly used for text files
+
 ## Git is a distributed version control system {.smaller}
 :::: columns
 ::: {.column width="50%"}
