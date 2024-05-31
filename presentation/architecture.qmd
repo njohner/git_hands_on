@@ -3,6 +3,7 @@
 ## Version control systems safeguards your code
 
 A version control system (VCS):
+
 - track and manage changes to source code
 - recover previous versions
 - Parallel development

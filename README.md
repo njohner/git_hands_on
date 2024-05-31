@@ -38,11 +38,27 @@ presentation/figures
 
 As we work through the exercises we will try to keep the repository clean, so that each exercise can be done independently. We will therefore work on separate branches.
 
+Exercises are organised by topic, not difficulty. Exercises complexity is given in brackets (basic, intermediate and advanced).
+
 ### Ex. 1: Recording changes
+#### Ex. 1.1 (basic): Adding and committing changes
 - Create a branch from master and switch to it: `git switch -c ex1 master`
 - Modify `training/file1.md`, stage the changes and commit them.
+
+<details>
+<summary>${\color{red}Answer}$</summary>
+
+```bash
+git switch -c ex1 master
+# modify training/file1.md
+git add training/file1.md
+git commit -m 'Modified file1.'
+```
+</details>
+
+#### Ex. 1.2 (advanced): Staging part of a file.
 - Now modify `training/file2.md`, add some text lines before the current content and some after the current content.
-- Only stage the first block of changes.
+- Only stage the first block of changes (changes that were added before the existing content).
 - Show the staged changes.
 - Show the changes that were not staged.
 - Commit.
@@ -53,10 +69,6 @@ As we work through the exercises we will try to keep the repository clean, so th
 <summary>${\color{red}Answer}$</summary>
 
 ```bash
-git switch -c ex1 master
-# modify training/file1.md
-git add training/file1.md
-git commit -m 'Modified file1.'
 # modify training/file2.md
 git add -i training/file2.md
 git diff --staged
@@ -70,7 +82,7 @@ git log -n3
 
 
 ### Ex. 2: working with branches
-#### Ex. 2.1: Creating and using branches
+#### Ex. 2.1 (basic): Creating and using branches
 - Check on which branch you currently are
 - If not on `master`, switch to `master`
 - Create a new branch `ex2` and switch to it
@@ -100,7 +112,7 @@ git commit -m "Modified file2."
 ```
 </details>
 
-#### Ex. 2.2: Rebasing
+#### Ex. 2.2 (basic): Rebasing
 - Look at the current history with `git log -n6 --oneline --graph --decorate --all`
 - We will now rebase branch `ex2b` onto branch `ex2`:
     - If you are not on branch `ex2b`, switch to it
@@ -118,7 +130,7 @@ git log -n6 --oneline --graph --decorate --all
 ```
 </details>
 
-#### Ex. 2.3: Fast-forward merge
+#### Ex. 2.3 (basic): Fast-forward merge
 - switch over to `ex2`
 - merge `ex2b` into `ex2`
 - Look at the current history with `git log -n6 --oneline --graph --decorate --all`
@@ -135,7 +147,7 @@ git branch -d ex2b
 ```
 </details>
 
-#### Ex. 2.4: Conflict resolution
+#### Ex. 2.4 (intermediate): Conflict resolution
 Let's go ahead and create a conflict
 - Switch to `master` branch
 - Create new branch `ex2c` and switch to it
@@ -166,7 +178,7 @@ git log -n6 --oneline --graph --decorate --all
 ```
 </details>
 
-#### Ex. 2.4: Deleting branches
+#### Ex. 2.4 (basic): Deleting branches
 We'll now do some clean-up:
 - Switch to `master` branch
 - Delete all other branches. For some branches, git will complain that the branch was not fully merged, and you'll have to force delete them, git will tell you how (use `git branch -D <branchname>`)
@@ -181,7 +193,7 @@ git branch -D ex2c
 ```
 </details>
 
-### Ex. 3: The stash
+### Ex. 3 (intermediate): The stash
 We assume you are working on `training/file1.md` on two different branches, a `dev` branch and a `hotfix` branch. Let's set that up:
 - Switch to a new branch `hotfix` (from master)
 - Modify `training/file1.md` and commit these changes
@@ -231,7 +243,7 @@ git branch -D dev
 
 ### Ex. 4: Rewriting history
 
-#### Ex. 4.1: Amending the last commit
+#### Ex. 4.1 (basic): Amending the last commit
 We will start simple, by modifying the last commit.
 - Switch to a new branch `ex4` (from master)
 - Modify `training/file1.md` and commit the changes
@@ -253,7 +265,7 @@ git commit --amend
 ```
 </details>
 
-#### Ex. 4.2: Interactive rebasing
+#### Ex. 4.2 (advanced): Interactive rebasing
 Make two more commits (still on branch ex4):
 - Modify `training/file2.md` and commit the changes
 - Modify `training/file1.md` and commit the changes
@@ -278,7 +290,7 @@ git log -n3
 ```
 </details>
 
-### Ex. 5: Undoing things
+### Ex. 5 (intermediate): Undoing things
 We go on working on branch `ex4`. If you don't have that branch, simply create a new branch and add 2 commits.
 
 #### Ex. 5.1: Undoing the last commit
