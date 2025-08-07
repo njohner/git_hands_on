@@ -2,6 +2,30 @@
 
 This repository is meant to provide both slides and exercises to better understand and learn to use git.
 
+## Getting ready for the course
+
+For this course you will need to `git` and a clone of this repository. 
+
+### Installing git
+
+On *Linux* and *Mac* git should be already available. On *windows* you will need to either run a Linux, for example using [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) or [install git on your windows machine](https://git-scm.com/downloads/win)
+
+### Cloning this repository
+
+To get the course material we will be working with, you'll need to clone this repository. For this, open a terminal, command prompt or PowerShell, change directory to wherever you want the course material and then type
+
+```
+git clone https://github.com/njohner/git_hands_on.git
+```
+
+or
+
+```
+git clone git@github.com:njohner/git_hands_on.git
+```
+
+To be able to clone using the git protocol above you'll need to have a [github account](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github) and [configured everything](https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup), notably by [setting up the SSH keys](https://docs.github.com/en/authentication/connecting-to-github-with-ssh).
+
 ## Presentation
 
 The presentation is written in Markdown format and can be converted to a usable format (html, pdf, etc.) using [quarto](https://quarto.org).
