@@ -118,9 +118,9 @@ What had been committed should be retrievable.
 ![](figures/git_restore_workflow.drawio.svg)
 ::::
 :::: {.column width="50%"}
-- `git restore [--workdir] <path>`: restore file in workdir from staging area
+- `git restore [--worktree] <path>`: restore file in workdir from staging area
 - `git restore --staged <path>`: restore file in staging area from repo
-- `git restore --workdir --staged <path>`: restore file in workdir and staging area from repo
+- `git restore --worktree --staged <path>`: restore file in workdir and staging area from repo
 - `git restore --source=<tree>`: restore file from specified commit or branch
 
 ::: {.fragment .fade-in .callout-tip}
