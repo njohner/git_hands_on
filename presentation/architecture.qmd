@@ -37,7 +37,7 @@ A version control system (VCS):
 ::::
 
 
-## Git stores snapshots, not deltas.
+## Git stores snapshots, not deltas. {.smaller}
 :::: columns
 ::: {.column width="50%"}
 Delta-based version control
@@ -53,6 +53,9 @@ Git data model
 
 - Snapshots of a miniature file system
 - Everything is referenced via checksums.
+- Commit: 
+    - snapshot + reference of parent and other metadata
+    - often represented as a diff
 :::
 ::::
 
