@@ -26,6 +26,7 @@ auto-agenda:
   heading: Agenda
 revealjs-plugins:
   - codefocus
+  - pointer
 ---
 
 ## Foreword

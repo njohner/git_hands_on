@@ -37,6 +37,7 @@ For that you will need to:
     - `quarto install extension andrie/reveal-auto-agenda`
     - `quarto install extension grantmcdermott/quarto-revealjs-clean`
     - `quarto add reuning/codefocus`
+    - `quarto add quarto-ext/pointer`
 
 Viewing the slides can then be simply achieved with
 ```
