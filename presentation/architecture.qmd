@@ -2,6 +2,11 @@
 
 ## Version control systems safeguards your code
 
+:::: columns
+::: {.column width="50%"}
+![](figures/version_mess.png){.nostretch width="100%" fig-align="center"}
+:::
+::: {.column width="50%"}
 A version control system (VCS):
 
 - track and manage changes to source code
@@ -9,6 +14,8 @@ A version control system (VCS):
 - Parallel development
 - Manage releases
 - Mainly used for text files
+:::
+::::
 
 ## Git is a distributed version control system {.smaller}
 :::: columns
